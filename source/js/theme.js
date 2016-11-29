@@ -100,14 +100,22 @@ $(function() {
         })
     }
 
-    var $prev = $("#prev"),
-        prevText = $prev.find('span'),
-        prevTitle = $prev[0].dataset.title
-    hoverPaginator($prev, prevText, prevTitle)
+    var $prev = $("#prev")
+    if ($prev.length) {
+      var prevText = $prev.find('span'),
+          prevTitle = $prev[0].dataset.title
+      if (prevTitle) {
+        hoverPaginator($prev, prevText, prevTitle)
+      } 
+    }
 
-    var $next = $("#next"),
-        nextText = $next.find('span'),
-        nextTitle = $next[0].dataset.title;
-    hoverPaginator($next, nextText, nextTitle)
+    var $next = $("#next")
+    if ($next.length) {
+      var nextText = $next.find('span'),
+          nextTitle = $next[0].dataset.title
+      if (nextTitle) {
+        hoverPaginator($next, nextText, nextTitle)
+      }
+    }
   })()
 })
